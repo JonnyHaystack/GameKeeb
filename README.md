@@ -13,7 +13,7 @@ competing in Super Smash Bros Melee. I had the idea to make one using the
 Raspberry Pi Pico, because it natively operates at 3.3V supply voltage and logic
 level, and it has USB host support built in. Additionally, Arte had already
 developed the awesome
-(pico-rectangle)[https://github.com/JulienBernard3383279/pico-rectangle]
+[pico-rectangle](https://github.com/JulienBernard3383279/pico-rectangle)
 firmware, so I forked it and modified it to read keycodes from a USB keyboard
 instead of just GPIO inputs.
 
