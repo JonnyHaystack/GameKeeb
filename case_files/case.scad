@@ -138,7 +138,8 @@ module case_with_corner_extensions() {
 module usb_panel_mount() {
   // USB port hole.
   cuboid([
-    usb_port_hole_width, wall_thickness * 2 + 1,
+    usb_port_hole_width,
+    wall_thickness * 2 + 1,
     usb_port_hole_height
   ]);
 
