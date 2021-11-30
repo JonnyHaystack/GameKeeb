@@ -1,8 +1,8 @@
 include <BOSL/constants.scad>
-include <BOSL/metric_screws.scad>
-include <BOSL/shapes.scad>
-include <BOSL/transforms.scad>
 include <NopSCADlib/lib.scad>
+use <BOSL/metric_screws.scad>
+use <BOSL/shapes.scad>
+use <BOSL/transforms.scad>
 
 // Epsilon value for offsetting coincident face differences.
 E = 0.004;
@@ -35,7 +35,9 @@ gcc_connector_slot_thickness = 3;
 gcc_connector_slot_length = 25;
 
 gcc_connector_stopper_thickness = 5;
+gcc_connector_stopper_reinforcement_angle = 55;
 gcc_connector_stopper_gap_size = 5;
+gcc_connector_stopper_corner_radius = 1;
 
 pico_width = 21;
 pico_height = 51;
@@ -74,7 +76,7 @@ reset_hole_diameter = 1.6;
 
 /* Begin modules */ 
 case();
-*lid();
+lid();
 pico_preview();
 
 
@@ -280,7 +282,7 @@ module lid_screw_holes() {
     (case_width - wall_thickness - corner_extension_thickness) / 2,
     (case_length - wall_thickness - corner_extension_thickness) / 2,
     lid_thickness + E
-  ]) {
+  ])
     metric_bolt(
       size=lid_screw_hole_diameter,
       l=6,
@@ -288,7 +290,6 @@ module lid_screw_holes() {
       pitch=0,
       align=V_DOWN
     );
-  }
 }
 
 module gcc_connector_stopper() {
@@ -299,7 +300,12 @@ module gcc_connector_stopper() {
     - 2.5
   );
 
+  gcc_connector_stopper_reinforcement_length = (
+    pow(tan(gcc_connector_stopper_reinforcement_angle), -1)
+    * gcc_connector_stopper_height
+  );
   
+  // Move to position for stopper.
   translate([
     0,
     (
@@ -310,27 +316,48 @@ module gcc_connector_stopper() {
     0
   ])
     difference() {
-      cuboid([
-        gcc_connector_diameter,
-        gcc_connector_stopper_thickness,
-        gcc_connector_stopper_height
-      ], align=V_DOWN, fillet=1, edges=EDGES_Y_BOT);
-
-      // Slot/gap for cable/wires coming out of GCC connector.
+      // The stopper itself.
       hull() {
-        translate([0, 0, -case_height / 2])
-          ycyl(
-            d=gcc_connector_stopper_gap_size,
-            l=gcc_connector_stopper_thickness + E
-          );
-        translate([0, 0, -gcc_connector_stopper_height])
-          cuboid([
-            gcc_connector_stopper_gap_size,
-            gcc_connector_stopper_thickness + E,
-            E
-          ], align=V_UP);
-      }
+        cuboid([
+          gcc_connector_diameter,
+          gcc_connector_stopper_thickness,
+          gcc_connector_stopper_height
+        ], align=V_DOWN, fillet=1, edges=EDGES_Y_BOT);
+
+        xflip_copy() translate([
+          -(gcc_connector_diameter / 2 - gcc_connector_stopper_corner_radius),
+          -(
+            gcc_connector_stopper_thickness / 2
+            + gcc_connector_stopper_reinforcement_length
+          ),
+          0
+        ])
+          cylinder(r=gcc_connector_stopper_corner_radius, h=E);
     }
+
+    // Slot/gap for cable/wires coming out of GCC connector.
+    hull() {
+      translate([0, 0, -case_height / 2])
+        ycyl(
+          d=gcc_connector_stopper_gap_size,
+          l=(
+            gcc_connector_stopper_thickness
+            + gcc_connector_stopper_reinforcement_length
+            + E
+          )
+        );
+      translate([0, 0, -gcc_connector_stopper_height])
+        cuboid([
+          gcc_connector_stopper_gap_size,
+          (
+            gcc_connector_stopper_thickness
+            + gcc_connector_stopper_reinforcement_length
+            + E
+          ),
+          E
+        ], align=V_UP);
+    }
+  }
 }
 
 module pico_preview() {
