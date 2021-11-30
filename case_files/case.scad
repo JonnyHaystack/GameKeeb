@@ -7,25 +7,21 @@ include <NopSCADlib/lib.scad>
 // Epsilon value for offsetting coincident face differences.
 E = 0.004;
 
-case_width = 62;
+case_width = 60;
 case_length = 85;
 case_height = 22;
 
-wall_thickness = 4;
+wall_thickness = 3;
 corner_radius = 3;
-corner_extension_thickness = wall_thickness * 1.5;
+corner_extension_thickness = wall_thickness * 2;
 
 lid_thickness = 3;
 lid_screw_hole_diameter = 3.8;
-lid_screw_recess_diameter = 6.2;
-lid_screw_recess_depth = 2;
 
 threaded_insert_hole_diameter = 4.4;
 threaded_insert_hole_depth = 7;
 
-usb_screw_hole_diameter = 3.4;
-usb_screw_recess_diameter = 6.2;
-usb_screw_recess_depth = 2;
+usb_screw_hole_diameter = 3.8;
 
 usb_port_hole_height = 10;
 usb_port_hole_width = 18;
@@ -78,7 +74,7 @@ reset_hole_diameter = 1.6;
 
 /* Begin modules */ 
 case();
-lid();
+*lid();
 pico_preview();
 
 
@@ -145,16 +141,12 @@ module usb_panel_mount() {
 
   // USB port screw holes.
   xflip_copy() translate([usb_port_screw_to_midpoint, 0, 0]) {
-    // Screw hole.
-    ycyl(
+    metric_bolt(
+      size=lid_screw_hole_diameter,
       l=wall_thickness + E * 2,
-      d=usb_screw_hole_diameter,
-      align=V_BACK
-    );
-    // Screw recess.
-    ycyl(
-      l=usb_screw_recess_depth + E,
-      d=usb_screw_recess_diameter,
+      headtype="countersunk",
+      pitch=0,
+      orient=ORIENT_YNEG,
       align=V_BACK
     );
   }
