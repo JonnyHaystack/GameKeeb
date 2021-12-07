@@ -29,19 +29,15 @@ shipping costs).
 
 ## Parts used
 
-| Part name                            | Amount    | Link                                                                                                       |
-|--------------------------------------|-----------|:----------------------------------------------------------------------------------------------------------:|
-| USB A panel mount                    | 1         | https://www.ebay.co.uk/itm/231984473033 (alternatively https://www.aliexpress.com/item/32573641881.html)   |
-| GameCube controller extension cable  | 2         | https://www.ebay.co.uk/itm/193842724956 (alternatively https://www.aliexpress.com/item/4000505687571.html) |
-| M3 threaded insert, M3 X D4.0 X L5.2 | 4         | https://www.ebay.co.uk/itm/264096317255                                                                    |
-| M3x6mm machine screw                 | 4 (or 6*) | https://www.ebay.co.uk/itm/192055137207?var=491899070110                                                   |
-| M2x4mm self-tapping screw            | 4         | https://www.ebay.co.uk/itm/383054906364?var=651662203885                                                   |
-| Raspberry Pi Pico                    | 1         | https://shop.pimoroni.com/products/raspberry-pi-pico?variant=32402092294227                                |
-| Gorilla glue                         | 1         | https://www.amazon.com/dp/B07GQ1CT47                                                                       |
-| Case                                 | 1         | 3D printed                                                                                                 |
-
-\* If your USB panel mount doesn't come with screws you will need to buy 2 more
-to secure it, making 6 in total.
+| Part name                            | Amount | Link                                                                                                       |
+|--------------------------------------|--------|:----------------------------------------------------------------------------------------------------------:|
+| USB A panel mount                    | 1      | https://www.ebay.co.uk/itm/231984473033 (alternatively https://www.aliexpress.com/item/32573641881.html)   |
+| GameCube controller extension cable  | 2      | https://www.ebay.co.uk/itm/193842724956 (alternatively https://www.aliexpress.com/item/4000505687571.html) |
+| M3 threaded insert, M3 X D4.0 X L5.2 | 4      | https://www.ebay.co.uk/itm/264096317255                                                                    |
+| M3x6mm countersunk machine screw     | 6      | https://www.ebay.co.uk/itm/222414700032                                                                    |
+| M2x4mm self-tapping screw            | 4      | https://www.ebay.co.uk/itm/383054906364?var=651662203885                                                   |
+| Raspberry Pi Pico                    | 1      | https://shop.pimoroni.com/products/raspberry-pi-pico?variant=32402092294227                                |
+| Case                                 | 1      | [3D printed](case_files/)                                                                                  |
 
 ## Printing the case
 
@@ -59,7 +55,12 @@ shouldn't require any special settings.
 
 ![](pics/2.jpg)
 
-2. Solder the USB panel mount and the GameCube controller connector to the Pico
+2. Use a knife to scrape off the two bumps/ridges on the top of the GameCube
+   connector and insert it from inside the case.
+
+![](pics/3.jpg)
+
+3. Solder the USB panel mount and the GameCube controller connector to the Pico
    following the wiring diagram below.
 
 ![](pics/wiring_diagram.png)
@@ -72,6 +73,7 @@ found [here](http://int03.co.uk/crema/hardware/gamecube/gc-control.html).
 
 Based on my testing, the colour coding for the type of extension cable I have
 linked is as follows:
+
 - Pin 1 (5V supply): White
 - Pin 2 (Data): Red
 - Pin 3 (GND1): Black
@@ -89,29 +91,27 @@ pin holes. I take advantage of this to make the wiring simpler.
 It also is advisable to use kapton tape or some other means of insulation to
 prevent any potential shorts between the D+ and D- wires.
 
-3. Prepare the case by inserting threaded inserts. This is done by inserting
-them into the holes and heating them with a soldering iron at around 220C. You
-shouldn't need to push them in. Just let gravity do the work.
+4. Prepare the case by inserting threaded inserts. This is done by inserting
+   them into the holes and heating them with a soldering iron at around 220C.
+   You shouldn't need to push them in. Just let gravity do the work.
 
 ![](pics/4.jpg)
 
-4. Now you will need to use gorilla glue (or your preferred adhesive) to secure
-the GameCube connector in the case.
+5. Insert the GameCube connector into the GameCube connector slot.
 
-![](pics/5.jpg)
 ![](pics/6.jpg)
 
-5. Secure the Pico to the standoffs using the M2x4mm self-tapping screws. Be
-careful not to over-tighten them or break the standoffs.
+6. Secure the Pico to the standoffs using the M2x4mm self-tapping screws. Be
+   careful not to over-tighten them or break the standoffs.
 
 ![](pics/7.jpg)
 
-6. Mount the USB panel mount connector using either the screws included with it
-or some other M3 screws. The M3x6mm screws used for the lid should work fine.
+7. Mount the USB panel mount connector using 2 M3x6mm screws.
 
 ![](pics/8.jpg)
 
-7. Screw the lid onto the case using 4 M3x6mm screws.
+8. Screw the lid onto the case using 4 M3x6mm screws and making sure that the
+   locking piece does not crush any of the wires inside the case.
 
 ![](pics/13.jpg)
 
@@ -122,8 +122,8 @@ should probably have done this beforehand to make sure the microcontroller
 works. Anyway...
 
 1. Connect the Pico to your PC via USB while pressing the bootsel button. If you
-have already completed the assembly, you can achieve this by sticking a
-paperclip into the tiny hole in the bottom of the case.
+   have already completed the assembly, you can achieve this by sticking a
+   paperclip into the tiny hole in the bottom of the case.
 
 2. The Pico should show up as a flash drive on your PC. Drop the firmware .uf2
-file onto it and it will reprogram itself automatically.
+   file onto it and it will reprogram itself automatically.
