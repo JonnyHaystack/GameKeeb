@@ -55,10 +55,10 @@ shouldn't require any special settings.
 
 ![](pics/2.jpg)
 
-2. Use a knife to scrape off the two bumps/ridges on the top of the GameCube
-   connector and insert it from inside the case.
+2. Use a knife to slice/scrape off the two bumps/ridges on the top of the GameCube
+   connector. This is necessary for it to fit in the slot in the case. Some cables may not have these, in which case you can ignore this step.
 
-![](pics/3.jpg)
+![](pics/2.5.png)
 
 3. Solder the USB panel mount and the GameCube controller connector to the Pico
    following the wiring diagram below.
@@ -66,8 +66,7 @@ shouldn't require any special settings.
 ![](pics/wiring_diagram.png)
 ![](pics/3.jpg)
 
-The USB colour coding is standard and you should be able to figure that part out
-without trouble. The GCC colour coding is only standard for official cables
+The USB colour coding is standard and can easily be found online. The GCC colour coding is only standard for official cables
 (i.e. cables in actual GameCube controllers). The official colour coding can be
 found [here](http://int03.co.uk/crema/hardware/gamecube/gc-control.html).
 
