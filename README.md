@@ -3,8 +3,7 @@
 Keyboard to GameCube adapter powered by Raspberry Pi Pico
 
 ![](pics/9.jpg)
-![](pics/11.jpg)
-![](pics/12.jpg)
+![](pics/10.jpg)
 
 ## Introduction
 
@@ -85,7 +84,9 @@ test continuity on the female connector (meaning you would have to strip the
 wires on the female connector as well).
 
 Note that these wires are thin enough that you can fit multiple wires into the
-pin holes. I take advantage of this to make the wiring simpler.
+pin holes. I take advantage of this to make the wiring simpler. If you have
+trouble fitting them you can use any other GND though. There are plenty of them
+in convenient locations.
 
 It also is advisable to use kapton tape or some other means of insulation to
 prevent any potential shorts between the D+ and D- wires.
@@ -98,21 +99,21 @@ prevent any potential shorts between the D+ and D- wires.
 
 5. Insert the GameCube connector into the GameCube connector slot.
 
-![](pics/6.jpg)
+![](pics/5.jpg)
 
 6. Secure the Pico to the standoffs using the M2x4mm self-tapping screws. Be
    careful not to over-tighten them or break the standoffs.
 
-![](pics/7.jpg)
+![](pics/6.jpg)
 
 7. Mount the USB panel mount connector using 2 M3x6mm screws.
 
-![](pics/8.jpg)
+![](pics/7.jpg)
 
 8. Screw the lid onto the case using 4 M3x6mm screws and making sure that the
    locking piece does not crush any of the wires inside the case.
 
-![](pics/13.jpg)
+![](pics/8.jpg)
 
 ## Firmware flashing instructions
 
