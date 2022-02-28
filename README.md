@@ -16,10 +16,8 @@ developed the awesome
 firmware, so I forked it and modified it to read keycodes from a USB keyboard
 instead of just GPIO inputs.
 
-Bear in mind that USB host stuff is not as simple as it sounds, and the current
-firmware is not guaranteed to work with every keyboard. In particular, it does
-not support NKRO (N-Key rollover) keyboards. I do however plan on greatly
-improving the support for different keyboards.
+Bear in mind that USB host implementation is not as simple as it sounds, and the current
+firmware is not guaranteed to work with every keyboard. In particular, it may not support all NKRO (N-Key rollover) keyboards. It should work fine with any keyboard that supports the HID boot protocol, which is very common keyboard and usually recognisable by your keyboard having 6KRO. Many NKRO keyboards will fall back to boot protocol when needed anyway. You can test your key rollover at http://gadzikowski.com/nkeyrollover.html. Support for different keyboards will be further improved in the future.
 
 I do sell these fully assembled, so email me or [join my Discord](https://discord.com/invite/PreBbFgxxY)
 if you're interested. As stated above, I cannot guarantee compatibility with
