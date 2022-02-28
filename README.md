@@ -21,7 +21,7 @@ firmware is not guaranteed to work with every keyboard. In particular, it does
 not support NKRO (N-Key rollover) keyboards. I do however plan on greatly
 improving the support for different keyboards.
 
-I do sell these fully assembled, so email me or DM me on Discord (Haystack#1872)
+I do sell these fully assembled, so email me or [join my Discord](https://discord.com/invite/PreBbFgxxY)
 if you're interested. As stated above, I cannot guarantee compatibility with
 every keyboard, so I accept returns for a full refund (not including
 shipping costs).
