@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "RP2040")(type "Legacy")(uri "C:/Users/Haystack/Projects/GameKeeb/pcb/libraries/RP2040.lib")(options "")(descr ""))
+)
