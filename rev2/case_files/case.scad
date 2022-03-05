@@ -27,7 +27,6 @@ usb_port_hole_height = 8;
 usb_port_hole_width = 15;
 
 gcc_connector_diameter = 14;
-gcc_connector_length = 28.8;
 gcc_connector_centre_to_flat_side = 5;
 gcc_connector_slot_clearance = 0.25;
 gcc_connector_slot_thickness = 3;
@@ -42,17 +41,17 @@ pcb_width = 34;
 pcb_length = 34;
 pcb_centre_x = 0;
 pcb_centre_y = -8.75;
-pcb_standoff_x_inset = 4;
-pcb_standoff_y_inset = 4;
-pcb_screw_hole_x = (
+pcb_screw_hole_x_inset = 4;
+pcb_screw_hole_y_inset = 4;
+pcb_standoff_x = (
   pcb_centre_x
   + (pcb_width / 2)
-  - pcb_standoff_x_inset
+  - pcb_screw_hole_x_inset
 );
-pcb_screw_hole_y = (
+pcb_standoff_y = (
   pcb_centre_y
   + (pcb_length / 2)
-  - pcb_standoff_y_inset
+  - pcb_screw_hole_y_inset
 );
 
 pcb_standoff_height = 2.5;
@@ -207,8 +206,8 @@ module threaded_insert_holes() {
 module pcb_standoffs() {
   yflip_copy(cp=[0, pcb_centre_y]) xflip_copy(cp=[pcb_centre_x, 0])
     translate([
-      pcb_screw_hole_x,
-      pcb_screw_hole_y,
+      pcb_standoff_x,
+      pcb_standoff_y,
       -case_height / 2 + wall_thickness,
     ])
       linear_extrude(pcb_standoff_height)
@@ -271,7 +270,7 @@ module gcc_connector_stopper() {
     0,
     (
       case_length / 2
-      - gcc_connector_length - 0.5
+      - (gcc_connector_slot_length + 4.3)
       - gcc_connector_stopper_thickness / 2
     ),
     0,
