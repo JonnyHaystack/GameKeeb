@@ -1,2 +1,3 @@
 *-backups
 *.kicad_sch-bak
+gerber/
