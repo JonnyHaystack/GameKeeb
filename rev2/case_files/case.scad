@@ -8,7 +8,7 @@ use <BOSL/transforms.scad>
 E = 0.004;
 
 case_width = 41;
-case_length = 75;
+case_length = 67.5;
 case_height = 22;
 
 wall_thickness = 3;
@@ -30,7 +30,7 @@ gcc_connector_diameter = 14;
 gcc_connector_centre_to_flat_side = 5;
 gcc_connector_slot_clearance = 0.25;
 gcc_connector_slot_thickness = 3;
-gcc_connector_slot_length = 25;
+gcc_connector_slot_length = 15;
 
 gcc_connector_stopper_thickness = 5;
 gcc_connector_stopper_reinforcement_angle = 55;
@@ -60,7 +60,7 @@ pcb_standoff_wall_thickness = 1.5;
 
 /* Begin modules */ 
 case();
-*lid();
+lid();
 pcb_preview();
 
 
