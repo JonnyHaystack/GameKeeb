@@ -8,7 +8,7 @@ use <BOSL/transforms.scad>
 E = 0.004;
 
 case_width = 41;
-case_length = 67.5;
+case_length = 70.5;
 case_height = 22;
 
 wall_thickness = 3;
@@ -25,12 +25,13 @@ usb_screw_hole_diameter = 3.8;
 
 usb_port_hole_height = 8;
 usb_port_hole_width = 15;
+usb_port_z_offset = 0.6;
 
 gcc_connector_diameter = 14;
 gcc_connector_centre_to_flat_side = 5;
 gcc_connector_slot_clearance = 0.25;
 gcc_connector_slot_thickness = 3;
-gcc_connector_slot_length = 15;
+gcc_connector_slot_length = 17;
 
 gcc_connector_stopper_thickness = 5;
 gcc_connector_stopper_reinforcement_angle = 55;
@@ -69,8 +70,8 @@ module case() {
     case_with_corner_extensions();
 
     // Move to the near end of the case and cut out USB panel mount holes.
-    translate([0, -case_length / 2 - E, 0]) {
-      usb_panel_mount();
+    translate([0, -case_length / 2 - E, usb_port_z_offset]) {
+      usb_port_hole();
     }
 
     // Move to the far end of the case and cut out GCC connector hole.
@@ -114,7 +115,7 @@ module case_with_corner_extensions() {
   corner_extensions();
 }
 
-module usb_panel_mount() {
+module usb_port_hole() {
   // USB port hole.
   cuboid([
     usb_port_hole_width,

@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\Haystack\Projects\GameKeeb\rev2\pcb\kicad\GameKeeb.kicad_sch</source>
-    <date>22/03/2022 21:06:14</date>
+    <date>19/04/2022 13:12:22</date>
     <tool>Eeschema (6.0.1)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -416,7 +416,7 @@
     </comp>
     <comp ref="U2">
       <value>RP2040</value>
-      <footprint>kicad-rp2040-library:RP2040_QFN-56_EP_7x7_Pitch0.4mm_ThermalVias</footprint>
+      <footprint>RP2040:RP2040-QFN-56</footprint>
       <datasheet>https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf</datasheet>
       <fields>
         <field name="LCSC">C2040</field>
@@ -828,7 +828,7 @@
       <node ref="R2" pin="2" pintype="passive"/>
       <node ref="U2" pin="47" pinfunction="USB_DP" pintype="bidirectional"/>
     </net>
-    <net code="12" name="Net-(U2-Pad37)">
+    <net code="12" name="Net-(R6-Pad1)">
       <node ref="R6" pin="1" pintype="passive"/>
       <node ref="U2" pin="37" pinfunction="GPIO25" pintype="bidirectional"/>
     </net>
