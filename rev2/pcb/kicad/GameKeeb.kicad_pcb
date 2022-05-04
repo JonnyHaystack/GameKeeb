@@ -1796,7 +1796,6 @@
   (gr_text "GameKeeb\nrev2.2\nby Haystack" (at 135.5 65) (layer "F.SilkS") (tstamp f0e0b1ec-a224-4911-80b0-3b288455780f)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (target plus (at 145.8 70) (size 5) (width 0.1) (layer "Edge.Cuts") (tstamp da91efff-b949-45a3-b174-20b00a5164eb))
 
   (segment (start 143 87.79) (end 143 85.15) (width 0.4) (layer "F.Cu") (net 1) (tstamp 2357d59c-c8b4-4f03-8fc0-b4c6857c202a))
   (segment (start 141.05 86.25) (end 142.5 87.7) (width 0.4) (layer "F.Cu") (net 1) (tstamp 376a2c72-719a-4997-bc25-c53d71f2257f))
